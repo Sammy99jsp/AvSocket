@@ -22,7 +22,7 @@
 //!
 //! mod proto;
 //! 
-//! use avsocket::Handler;
+//! use avsocket::server::{Handler, Server};
 //!
 //! #[tokio::main]
 //! async fn main() -> anyhow::Result<()> {
