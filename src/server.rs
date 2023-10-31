@@ -114,7 +114,7 @@ pub struct Server;
 impl Server {
     pub async fn run(path: impl AsRef<Path>, handler: Handler) -> anyhow::Result<()> {
         let path = path.as_ref();
-        let _ = fs::create_dir_all(path.ancestors().next().map_or(
+        let _ = fs::create_dir_all(path.ancestors().nth(1).map_or(
             Err(anyhow::format_err!(
                 "Socket cannot be at `/`. Try `/run/user/{{USER}}/...`"
             )),
